@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
+                android:fontFamily="@font/gotham"
+                android:shadowColor="#57000000"
+                android:text="@string/register_text"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"/>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColorHint="#FFFFFF">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/calibri"
+                        android:id="@+id/name"
+                    android:hint="昵称"
+                    android:inputType="text"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColorHint="#FFFFFF">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/calibri"
+                    android:hint="用户名"
+                        android:id="@+id/uid"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColorHint="#FFFFFF">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/calibri"
+                    android:hint="密码"
+                        android:id="@+id/pass"
+                    android:inputType="textPassword"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColorHint="#FFFFFF">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/calibri"
+                    android:hint="确认密码"
+                        android:id="@+id/repass"
+                    android:inputType="textPassword"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                    android:id="@+id/register"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonshape"
+                android:fontFamily="@font/gotham"
+                android:text="注册"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:layout_marginTop="44dp"
+                android:layout_marginBottom="16dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <RelativeLayout
+            android:id="@+id/poi_detail"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/border_bg"
+            android:visibility="gone">
+
+        <TextView
+                android:id="@+id/poi_name"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="#5566b8"
+                android:textSize="15sp" />
+
+
+        <TextView
+                android:id="@+id/poi_address"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/poi_name"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+        <TextView
+                android:id="@+id/poi_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/poi_address"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:gravity="center_vertical"
+                android:textColor="#333333"
+                android:textSize="12sp" />
+    </RelativeLayout>
+    <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/view_bottom" />
+
+    <include
+            android:id="@+id/view_bottom"
+            layout="@layout/view_bottom"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp" />
+
+    <Button
+            android:id="@+id/navi"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_above="@+id/view_bottom"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/daoh"
+            android:onClick="route" />
+
+</RelativeLayout>
