@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TimeUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -34,6 +35,7 @@ import com.yjy.gdmap.app.BaseActivity;
 import com.yjy.gdmap.overlay.MyPoiOverlay;
 import com.yjy.gdmap.route.RideRouteActivity;
 import com.yjy.gdmap.route.RouteActivity;
+import com.yjy.gdmap.util.TimeUtil;
 import com.yjy.gdmap.util.ToastUtil;
 
 import javax.crypto.Mac;
@@ -42,6 +44,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static com.amap.api.maps.AMap.MAP_TYPE_BUS;
+import static com.amap.api.maps.AMap.MAP_TYPE_NIGHT;
 import static com.yjy.gdmap.overlay.MyPoiOverlay.markers;
 
 public class MainActivity extends BaseActivity implements AMapLocationListener, AMap.OnMarkerClickListener, AMap.InfoWindowAdapter, PoiSearch.OnPoiSearchListener {
@@ -149,6 +153,9 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
                 marker = aMap.addMarker(new MarkerOptions().position(latLng).title("目标点").snippet("位置：" + latLng1.latitude + "," + latLng1.longitude));
             }
         });
+        if(Integer.parseInt(TimeUtil.getTime())>18&&Integer.parseInt(TimeUtil.getTime())<6){
+            aMap.setMapType(MAP_TYPE_NIGHT);
+        }
 
     }
 
@@ -519,6 +526,22 @@ public class MainActivity extends BaseActivity implements AMapLocationListener, 
             startActivity(new Intent(MainActivity.this, RouteActivity.class));
         } else {
             Toast.makeText(getApplicationContext(), "请点击一个您想去的地方", Toast.LENGTH_SHORT).show();
+        }
+    }
+    int  refrush =1;
+    public void refrush(View view) {
+        if(refrush==1){
+            aMap.setMapType(AMap.MAP_TYPE_SATELLITE);// 矢量地图模式
+            refrush =2;
+        }else if (refrush==2){
+            aMap.setMapType(AMap.MAP_TYPE_NORMAL);// 矢量地图模式
+            refrush =3;
+        }else if(refrush==3){
+            aMap.setMapType(MAP_TYPE_BUS);
+            refrush =4;
+        }else if(refrush==4){
+            aMap.setMapType(MAP_TYPE_NIGHT);
+            refrush =1;
         }
     }
 }
